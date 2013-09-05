@@ -15,15 +15,10 @@ public class exercise3 {
 		double term = 1.0;
 		double sum = 1.0;
 		double iFactorial = 1.0;
-		double iSubFactorial = 0.0;
 
 		for (int i = 1; term >= Math.pow(10,-12); i++) {
-			iSubFactorial = i;
-			while (iSubFactorial > 1) {
-				iFactorial = iFactorial * iSubFactorial;
-				iSubFactorial = iSubFactorial - 1;
-			}
-			term = Math.pow(x,i)/iFactorial;
+			iFactorial = factorial(i);
+			term = xToTheN(x,i)/iFactorial;
 			sum = sum + term;
 			System.out.println("n: " + i + "\tterm: " + term + "\tsum: " + sum);
 			iFactorial = 1;
@@ -33,7 +28,23 @@ public class exercise3 {
 		System.out.println("real\te^x: " + Math.exp(x));
 
 		return;
-
 	}
-	
+
+	public static double xToTheN(double x, double n) {
+		double sum = x;
+		for (double i=1; i<n; i++) {
+			sum = sum * x;
+		}
+
+		return sum;
+	}
+
+	public static double factorial(double n) {
+		 double sum = 1;
+		for (double i=n; i>0; i--) {
+			sum = sum * i;	
+		}
+
+		return sum;
+	}
 }
