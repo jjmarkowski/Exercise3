@@ -16,7 +16,7 @@ public class exercise3 {
 		double sum = 1.0;
 		double iFactorial = 1.0;
 
-		for (int i = 1; term >= Math.pow(10,-12); i++) {
+		for (int i = 1; term >= .000000000001; i++) {
 			iFactorial = factorial(i);
 			term = xToTheN(x,i)/iFactorial;
 			sum = sum + term;
